@@ -5,6 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/validator_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/swagger/pom.xml" />
+        <option value="$PROJECT_DIR$/date/pom.xml" />
+        <option value="$PROJECT_DIR$/ThreadPool_Demo/pom.xml" />
       </list>
     </option>
   </component>

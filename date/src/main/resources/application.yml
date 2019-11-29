@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    master:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: zy79117911#
+      jdbc-url: jdbc:mysql://localhost:9999/management?SelectMode=cursor&zeroDateTimeBehavior=convertToNull&useServerPrepStmts=true&useSSL=false&characterEncoding=utf8
+
+    dev:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: zy79117911#
+      jdbc-url: jdbc:mysql://localhost:9999/touwentechnicaldb?SelectMode=cursor&zeroDateTimeBehavior=convertToNull&useServerPrepStmts=true&useSSL=false&characterEncoding=utf8
