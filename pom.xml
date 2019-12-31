@@ -11,6 +11,7 @@
     <modules>
         <module>thread_demo</module>
         <module>javabase</module>
+        <module>common</module>
     </modules>
 
 

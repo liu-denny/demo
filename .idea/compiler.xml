@@ -7,18 +7,23 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="validator_demo" />
+        <module name="date" />
+        <module name="common" />
         <module name="swagger" />
         <module name="thread_demo" />
         <module name="ThreadPool_Demo" />
+        <module name="spring_tool" />
+        <module name="demo (2) (ThreadPool)" />
         <module name="javabase" />
-        <module name="date" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ThreadPool_Demo" options="-parameters" />
       <module name="date" options="-parameters" />
+      <module name="demo (2) (ThreadPool)" options="-parameters" />
+      <module name="spring_tool" options="-parameters" />
       <module name="swagger" options="-parameters" />
       <module name="validator_demo" options="-parameters" />
     </option>
