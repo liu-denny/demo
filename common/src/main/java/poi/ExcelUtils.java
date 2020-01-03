@@ -1,10 +1,14 @@
-package utils;
+package poi;
 
 import lombok.Data;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,15 +41,15 @@ public class ExcelUtils {
             FileOutputStream fos = null;
             try {
                 fos = new FileOutputStream(new File(fileName)); // 若文件不存在则自动创建
-                HSSFWorkbook workbook = new HSSFWorkbook();
+                XSSFWorkbook workbook = new XSSFWorkbook();
 
-                HSSFSheet sheet = workbook.createSheet(sheetName);
-                HSSFRow row = sheet.createRow(num);  // 创建行，第一行
+                XSSFSheet sheet = workbook.createSheet(sheetName);
+                XSSFRow row = sheet.createRow(num);  // 创建行，第一行
 
                 //写入标题
                 if(title != null){
                     for(int i=0;i<title.length;i++){
-                        HSSFCell cell = row.createCell(i);
+                        XSSFCell cell = row.createCell(i);
                         cell.setCellValue(title[i]);
                     }
                 }else {
@@ -56,7 +60,7 @@ public class ExcelUtils {
                 if(values != null){
                     for(int i=0;i<values.length;i++) {
                         num++;
-                        HSSFRow row1 = sheet.createRow(num);
+                        XSSFRow row1 = sheet.createRow(num);
                         for (int j = 0; j < values[i].length; j++) {
                             //将内容按顺序赋给对应的列对象
                             String v = String.valueOf(values[i][j]).equals("null")? " ":String.valueOf(values[i][j]);
@@ -91,16 +95,16 @@ public class ExcelUtils {
         FileOutputStream fos = null;
         try {
             fis = new FileInputStream(fileName);
-            HSSFWorkbook workbook = new HSSFWorkbook(fis);
+            XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
-            HSSFSheet sheet = workbook.getSheet(sheetName);
+            XSSFSheet sheet = workbook.getSheet(sheetName);
             if(sheet == null){
                 sheet = workbook.createSheet(sheetName);
             }
             if (sheet != null) {
                 for(int i=0;i<values.length;i++) {
                     num++;
-                    HSSFRow row = sheet.createRow(num);
+                    XSSFRow row = sheet.createRow(num);
                     if (values[i] != null) {
                         for (int j = 0; j < values[i].length; j++) {
                             //将内容按顺序赋给对应的列对象
