@@ -314,12 +314,13 @@ public class Crawl6_3 {
         for (int j=0;j<keywords.size();j++) {
             title[j+1] = keywords.get(j);
         }
-        String path = "D:\\work\\demo\\common\\src\\main\\resources\\" + "业态查询三级维度Count_3.1.xlsx";
+        String path = "D:\\java_work\\demo\\common\\src\\resources\\" + "业态查询三级维度Count_3.1.xlsx";
         ExcelUtils.createExcel(path, "sheet1", title, null);
         ExcelUtils.appendToExcel(path,"sheet1",values);
 
-        String jsonPath = "D:\\work\\demo\\common\\src\\main\\resources\\count\\" + "业态查询三级维度Count_Json_3.xlsx";
-        String[] titleJson = new String[]{"门店名称","Json"};
-        ExcelUtils.createExcel(jsonPath, "sheet1", titleJson, jsons);
+        String jsonPath = "D:\\java_work\\demo\\common\\src\\resources\\" + "业态查询三级维度Count_Json_3.xlsx";
+        ExcelUtils excelUtils = new ExcelUtils();
+        excelUtils.createExcel(jsonPath, "sheet1", title, null);
+        excelUtils.appendToExcel(jsonPath, "sheet1", jsons);
     }
 }

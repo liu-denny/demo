@@ -221,6 +221,9 @@ public class Crawl6_1 {
 //                new HashMap<String, String>() {{ put("name","GZ海珠万国广场");put("gps","113.272883,23.101389");put("adcode","海珠区"); }},
 //                new HashMap<String, String>() {{ put("name","GZ海珠保利广场");put("gps","113.280536,23.102284");put("adcode","海珠区"); }},
 
+
+
+
                 new HashMap<String, String>() {{ put("name","GZ海印自由闲");put("gps","113.285863,23.126264");put("adcode","越秀区"); }},
                 new HashMap<String, String>() {{ put("name","GZ海铂丽廊广场");put("gps","113.312450,23.103120");put("adcode","海珠区"); }},
                 new HashMap<String, String>() {{ put("name","GZ广州亚运城");put("gps","113.477228,22.940801");put("adcode","番禺区"); }},
@@ -312,11 +315,12 @@ public class Crawl6_1 {
         for (int j=0;j<keywords.size();j++) {
             title[j+1] = keywords.get(j);
         }
-        String path = "D:\\work\\demo\\common\\src\\main\\resources\\" + "业态查询三级维度Count_1.1.xlsx";
+        String path = "D:\\java_work\\demo\\common\\src\\resources\\" + "业态查询三级维度Count_1.1.xlsx";
         ExcelUtils.createExcel(path, "sheet1", title, null);
         ExcelUtils.appendToExcel(path,"sheet1",values);
-        String jsonPath = "D:\\work\\demo\\common\\src\\main\\resources\\count\\" + "业态查询三级维度Count_Json_1.xlsx";
-        String[] titleJson = new String[]{"门店名称","Json"};
-        ExcelUtils.createExcel(jsonPath, "sheet1", titleJson, jsons);
+        String jsonPath = "D:\\java_work\\demo\\common\\src\\resources\\" + "业态查询三级维度Count_Json_1.xlsx";
+        ExcelUtils excelUtils = new ExcelUtils();
+        excelUtils.createExcel(jsonPath, "sheet1", title, null);
+        excelUtils.appendToExcel(jsonPath, "sheet1", jsons);
     }
 }
